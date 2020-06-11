@@ -1,0 +1,19 @@
+<hr color='red'>
+<h1>Buidings</h1>
+<hr color='red'>
+<ol>
+    
+        <% @buildings.each do |b| %>
+
+          <h2> <li>Building: <%=b.name%><br>
+            Availble Floors: </h2> <ul><li> 
+
+                        <% b.number_of_floors_available.each do |f| %>
+                        <h4><li>Floor <%=f%></li></h4>
+                        <% end %>
+                    </li>
+            </ul>
+           </li>
+        <% end %>
+    
+</ol>
