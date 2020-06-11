@@ -1,0 +1,12 @@
+<h4><%= @company.name %>-</h4>
+<% @company.offices.each do |v|%>
+<% building_name = @buildings.find(v.building_id) %>
+<div>Has Floor: <%= v.floor %> at our <%= building_name.name%> location. In the <%=building_name.country%></div>
+<% end%>
+<h4>  Here is a List of our current employees</h4>
+<ol><% @company.employees.each do |v| %></ol>
+<li>
+<%= link_to v.name, company_employee_path(v.id)%> works as our: <%=v.title%>
+</li>
+<% end%><br>
+<div><%= link_to 'Hired someone new?', new_company_employee_path(@company.id) %></div>

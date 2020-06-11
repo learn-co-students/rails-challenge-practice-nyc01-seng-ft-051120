@@ -1,0 +1,6 @@
+<h4>These are Some of our companies that have offices in our buildings:</h4>
+<% @companies.each do |v|%>
+<div><%=link_to v.name, company_path(v) %></div>
+<% end%>
+<br><br>
+<div>----<%= link_to 'Join Our Company Group', new_company_path %>----</div>
