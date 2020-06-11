@@ -1,0 +1,5 @@
+<h4>These are our Buildings:</h4>
+<% @buildings.each do |v| %>
+<div> <%=link_to v.name, building_path(v) %>,<div></div>Address: <%=v.address%></div>
+<br>
+<% end%>

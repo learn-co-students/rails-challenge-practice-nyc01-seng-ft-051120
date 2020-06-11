@@ -1,0 +1,15 @@
+<h3><%= @building.name %>:</h3><br>
+<div>Location: <%= @building.address %>, <%= @building.country %></div>
+<div>Rent Price per Floor: $<%= @building.rent_per_floor %> Monthly</div>
+<div>Number of Floors: <%=@building.number_of_floors %> </div>
+<div>These are our current Available floors:<%= @building.number_of_floors_available %></div><br>
+<div>Companies That hold offices in this building:</div>
+<div><% @building.offices.each do |v| %></div>
+<% company_name = @companies.find(v.company_id)%><br>
+<div>- <%= company_name.name %>:  Holds floor <%= v.floor%></div>
+
+<% end%><br>
+<div>Bringing in a total of $<%= @building.rent_per_floor * @building.floors_occupied %> a Month.</div><br>
+
+<%= link_to 'Update information for this Building', edit_building_path(@building) %><br><br>
+<%=link_to 'Home Page', buildings_path %>

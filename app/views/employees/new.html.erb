@@ -1,0 +1,17 @@
+<h4>Please Enter all the details for the new employee</h4>
+<% if flash[:errors]%>
+<% flash[:errors].each do |v|%>
+<%= v %>
+<% end%>
+<% end%>
+<%= form_for [@company, @employee]  do |v| %>
+
+<div><%= v.label :name %></div>
+<div><%= v.text_field :name %></div>
+
+<div><%= v.label :title %></div>
+<div><%= v.text_field :title %></div>
+
+<%= v.hidden_field :company_id, :value => @company.id %>
+<div><%= v.submit %></div>
+<% end%>

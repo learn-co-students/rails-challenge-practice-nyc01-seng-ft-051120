@@ -1,0 +1,3 @@
+<div><%= @employee.name %></div>
+<%= @employee.title %>
+<%= button_to "Delete Employee", company_employee_path( @employee.id), :method => :delete %>
